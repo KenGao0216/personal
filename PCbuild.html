@@ -4,153 +4,37 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ken Gao</title>
-    <link rel="stylesheet" href="Personal_Portfolio_Style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <title>My PC Builds</title>
+    <link rel="stylesheet" href="pcbuild.css">
     <script src="https://kit.fontawesome.com/1e260b47bd.js" crossorigin="anonymous"></script>
 </head>
 <body>
-<div id="header">
     <div class="container">
-        <div class="header-text">
-                <h1><span>Ken Gao</span><br>Computer Science student at the University of Waterloo</h1>
+        <div class="pc-build">
+            <h2>First Build + Upgrades</h2>
+            <ul>
+                <li><strong>Motherboard:</strong> B450 Tomahawk</li>
+                <li><strong>GPU:</strong> RX 580 -> RX 5700 XT</li>
+                <li><strong>CPU:</strong> Ryzen 5 5600X -> Ryzen 7 5700X</li>
+                <li><strong>Case:</strong> NZXT H5</li>
+                <li><strong>RAM:</strong> DDR4-3200MHz </li>
+                <li><strong>PSU:</strong> 650W 80+ Gold -> 800W 80+ Gold</li>
+                <li><strong>SSD:</strong> 970 Evo 1TB</li>
+            </ul>
+        </div>
+        <div class="pc-build">
+            <h2>Second Build</h2>
+            <ul>
+                <li><strong>Motherboard:</strong> Z790 Gaming Wifi II</li>
+                <li><strong>GPU:</strong> RTX 4080 Super Founders Edition</li>
+                <li><strong>CPU:</strong> I9-14900K</li>
+                <li><strong>Case:</strong> King 95 Pro</li>
+                <li><strong>RAM:</strong> DDR5-6400 MHz</li>
+                <li><strong>PSU:</strong> 1000W 80+ Platinum</li>
+                <li><strong>SSD:</strong> T705 2TB</li>
+                <li><strong>Cooler:</strong> Ryujin III 360</li>
+            </ul>
         </div>
     </div>
-</div>
-
-<!-- Portfolio Section -->
-<div id="portfolio">
-            <div class="cloud-item" onclick="openNewPage()">
-                <div class="cloud-shape"></div>
-                <span>PC Builds</span>
-            </div>
-            <div class="cloud-item" onclick="openNewPage1()">
-                <div class="cloud-shape"></div>
-                <span>VirtualPrez</span>
-            </div>
-            <div class="cloud-item" onclick="openNewPage2()">
-                <div class="cloud-shape"></div>
-                <span>b0dyf0cus.io</span>
-            </div>
-            <div class="cloud-item" onclick="openNewPage3()">
-                <div class="cloud-shape"></div>
-                <span>Wordle Probabilities</span>
-            </div>
-            </div>
-<!--Stats Section-->
-<div id="stats"> 
-    <div class="container">
-        <div class="stats-section">
-            <div>
-                <h2>Digits of PI Memorized</h2> 
-                <h2 id="counter">0</h2>
-                <h3 class="digits line1">3.141592653589793238462643383279502884197169399375</h3>
-                <h3 class="digits line2">10582097494459230781640628620899862803482534211706</h3>
-                <h3 class="digits line3">79821480865132823066470938446095505822317253594081</h3>
-                <h3 class="digits line4">28481117450284102701938521105559644622948954930381</h3>
-            </div>    
-            <div>
-                <h2>LeetCode Stats</h2>
-                <div id="leetcode-stats-container">
-                    Loading stats...
-                    
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<script>
-    function openNewPage() {
-        window.open('PCbuild.html', '_blank');
-    }
-
-    function openNewPage1() {
-        window.open('https://github.com/KenGao0216/virtualPrez', '_blank');
-    }
-
-    function openNewPage2() {
-        window.open('https://kennygfn.github.io/b0dyf0cus/', '_blank');
-    }
-
-    function openNewPage3() {
-        window.open('https://github.com/KenGao0216/Wordle-Probabilities', '_blank');
-    }
-</script>
-<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-<script>
-    function googleTranslateElementInit() {
-        new google.translate.TranslateElement(
-            {pageLanguage: 'en'},
-            'google_translate_element'
-        );
-    }
-</script>
-
-<script> 
-    function animateDigitsAndCounter() {
-        let digitsElement = document.querySelectorAll('.digits');
-        let counterElement = document.getElementById('counter');
-        let count = 0;
-
-        let interval = setInterval(function() {
-            if (count <= 200) {
-                counterElement.textContent = count;
-                count++;
-            } else {
-                clearInterval(interval);
-                counterElement.textContent = 200; 
-            }
-        }, 40);
-    }
-    window.onload = animateDigitsAndCounter;
-</script>
-
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-    const username = 'KenG23';
-    const statsUrl = `https://leetcode-stats-api.herokuapp.com/${username}`;
-
-    fetch(statsUrl)
-        .then(response => response.json())
-        .then(data => {
-            const statsContainer = document.getElementById('leetcode-stats-container');
-            if (data.status === 'success') {
-                statsContainer.innerHTML = `
-                    <h3><span style = "color: black;"> Total Solved:</span> ${data.totalSolved} / ${data.totalQuestions}</h3>
-                    <h3><span style="color: #4caf50;">Easy:</span> ${data.easySolved} / ${data.totalEasy}</h3>
-                    <h3><span style="color: #ff9800;">Medium:</span> ${data.mediumSolved} / ${data.totalMedium}</h3>
-                    <h3><span style="color: #f44336;">Hard:</span> ${data.hardSolved} / ${data.totalHard}</h3>
-                    <h3><span style = "color: black;">Ranking:</span> ${data.ranking}</h3>
-                `;
-            } else {
-                statsContainer.innerHTML = `<p>Failed to fetch stats. Please check your username.</p>`;
-            }
-        })
-        .catch(error => {
-            console.error('Error fetching Leetcode stats:', error);
-            const statsContainer = document.getElementById('leetcode-stats-container');
-            statsContainer.innerHTML = `<p>Error</p>`;
-        });
-});
-
-</script>
-<script> 
-document.addEventListener('DOMContentLoaded', () => {
-    const clouds = document.querySelectorAll('.cloud-item');
-    const positions = [
-        { left: '10%', top: '20%' },
-        { left: '60%', top: '20%' },
-        { left: '20%', top: '60%' },
-        { left: '70%', top: '60%' }
-    ];
-    clouds.forEach((cloud, index) => {
-        if (positions[index]) {
-            cloud.style.left = positions[index].left;
-            cloud.style.top = positions[index].top;
-        }
-    });
-});
-</script>
 </body>
 </html>
