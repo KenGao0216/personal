@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ken Gao</title>
     <link rel="stylesheet" href="Personal_Portfolio_Style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/1e260b47bd.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -19,38 +20,24 @@
 
 <!-- Portfolio Section -->
 <div id="portfolio">
-    <div class="container">
-        <div class="portfolio-list">
-            <div class="passions">
-                <h2>Passions</h2>
-                <h3>
-                    Being a big gamer, I am fascinated by PC hardware. I enjoy mixing and matching parts, <br>
-                    tweaking my PC, and following the release of new models. <br>
-                    Here are some of the PCs I've built in the past! <br>
-                    <button onclick="openNewPage()" class="gotoPCs">Click me</button>
-                </h3>
+            <div class="cloud-item" onclick="openNewPage()">
+                <div class="cloud-shape"></div>
+                <span>PC Builds</span>
             </div>
-            <div class="projects"> 
-                <h2>Projects</h2>
-                <ul class="projects-list">
-                    <li>
-                        <button onclick="openNewPage1()" class="project-buttons">b0dyf0cus.io:</button>
-                        <h3>Visually customize a workout with interactive svg and see if today is arm day or leg day</h3>
-                    </li>
-                    <li>
-                        <button onclick="openNewPage2()" class="project-buttons">UW Housing Ranker:</button>
-                        <h3>See which residence is best for you depending on the faculty you are studying</h3>
-                    </li>
-                    <li>
-                        <button onclick="openNewPage3()" class="project-buttons">IGCC.io:</button>
-                        <h3>Tired of people unfollowing you to boost their follower ratio? Check who in your following list is not following you back</h3>
-                    </li>
-                </ul>
+            <div class="cloud-item" onclick="openNewPage1()">
+                <div class="cloud-shape"></div>
+                <span>VirtualPrez</span>
             </div>
-        </div>
-    </div>
-</div>
-
+            <div class="cloud-item" onclick="openNewPage2()">
+                <div class="cloud-shape"></div>
+                <span>b0dyf0cus.io</span>
+            </div>
+            <div class="cloud-item" onclick="openNewPage3()">
+                <div class="cloud-shape"></div>
+                <span>Wordle Probabilities</span>
+            </div>
+            </div>
+<!--Stats Section-->
 <div id="stats"> 
     <div class="container">
         <div class="stats-section">
@@ -60,7 +47,7 @@
                 <h3 class="digits line1">3.141592653589793238462643383279502884197169399375</h3>
                 <h3 class="digits line2">10582097494459230781640628620899862803482534211706</h3>
                 <h3 class="digits line3">79821480865132823066470938446095505822317253594081</h3>
-                <h3 class="digits line4">284811174502</h3>
+                <h3 class="digits line4">28481117450284102701938521105559644622948954930381</h3>
             </div>    
             <div>
                 <h2>LeetCode Stats</h2>
@@ -68,10 +55,6 @@
                     Loading stats...
                     
                 </div>
-            </div>
-            <div>
-                <h2>USA Computing Olympiad</h2>
-                <h1>Rank: <img src="gold.png" width="50" height="50"> Gold</h1>
             </div>
         </div>
     </div>
@@ -83,15 +66,15 @@
     }
 
     function openNewPage1() {
-        window.open('https://kengao0216.github.io/b0dyf0cus2/', '_blank');
+        window.open('https://github.com/KenGao0216/virtualPrez', '_blank');
     }
 
     function openNewPage2() {
-        window.open('https://KenGao0216.github.io/UWMap', '_blank');
+        window.open('https://kennygfn.github.io/b0dyf0cus/', '_blank');
     }
 
     function openNewPage3() {
-        window.open('https://KenGao0216.github.io/IGTrack', '_blank');
+        window.open('https://github.com/KenGao0216/Wordle-Probabilities', '_blank');
     }
 </script>
 <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
@@ -111,12 +94,12 @@
         let count = 0;
 
         let interval = setInterval(function() {
-            if (count <= 160) {
+            if (count <= 200) {
                 counterElement.textContent = count;
                 count++;
             } else {
                 clearInterval(interval);
-                counterElement.textContent = 160; 
+                counterElement.textContent = 200; 
             }
         }, 40);
     }
@@ -151,6 +134,23 @@
         });
 });
 
+</script>
+<script> 
+document.addEventListener('DOMContentLoaded', () => {
+    const clouds = document.querySelectorAll('.cloud-item');
+    const positions = [
+        { left: '10%', top: '20%' },
+        { left: '60%', top: '20%' },
+        { left: '20%', top: '60%' },
+        { left: '70%', top: '60%' }
+    ];
+    clouds.forEach((cloud, index) => {
+        if (positions[index]) {
+            cloud.style.left = positions[index].left;
+            cloud.style.top = positions[index].top;
+        }
+    });
+});
 </script>
 </body>
 </html>
