@@ -128,19 +128,29 @@ body{
     color: rgb(80, 80, 80);
 }
 .digits.line1 {
-    animation: typing1 2.5s steps(40, end) forwards,steps(1, end) infinite;
+    animation: typing1 0.75s steps(40, end) forwards,steps(1, end) infinite;
 }
 .digits.line2 {
-    animation: typing2 2.5s steps(40, end) forwards, steps(1, end) infinite;
-    animation-delay: 2s; 
+    animation: typing2 0.75s steps(40, end) forwards, steps(1, end) infinite;
+    animation-delay: 0.5s; 
 }
 .digits.line3 {
-    animation: typing3 2.5s steps(40, end) forwards, steps(1, end) infinite;
-    animation-delay: 4.5s; 
+    animation: typing3 0.75s steps(40, end) forwards, steps(1, end) infinite;
+    animation-delay: 1s; 
 }
 .digits.line4 {
-    animation: typing4 2.5s steps(40, end) forwards, steps(1, end) infinite;
-    animation-delay: 7s; 
+    animation: typing4 0.75s steps(40, end) forwards, steps(1, end) infinite;
+    animation-delay: 1.5s; 
+    
+}
+.digits.line5 {
+    animation: typing4 0.75s steps(40, end) forwards, steps(1, end) infinite;
+    animation-delay: 2s; 
+    
+}
+.digits.line6 {
+    animation: typing4 0.75s steps(40, end) forwards, steps(1, end) infinite;
+    animation-delay: 2.5s; 
     
 }
 
@@ -225,71 +235,40 @@ body{
     }
     
 }
-
+/*--------------------------------------------------------------------------------------------------------------*/
 #portfolio {
-    position: relative;
-    padding: 200px 0; 
-    width: 100%;
-    height: 600px;
-    overflow: hidden;
-}
-
-.cloud-item {
-    position: absolute;
+    padding: 30px 0;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 28px;
-    color: #333;
-    cursor: pointer;
-    text-align: center;
-    width: 200px; 
-    height: 120px; 
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
 }
 
-.cloud-shape {
-    position: absolute;
-    width: 200px; 
-    height: 120px; 
-    background: #e0f7fa;
-    border-radius: 50%;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-    z-index: -1; 
-}
 
-.cloud-shape::before,
-.cloud-shape::after {
-    content: '';
-    position: absolute;
-    width: 160px;
-    height: 100px;
-    background: #e0f7fa;
-    border-radius: 50%;
-}
-
-.cloud-shape::before {
-    top: -50px;
-    left: -40px;
-}
-
-.cloud-shape::after {
-    top: -50px;
-    right: -40px;
-}
-@keyframes oscillate {
-    0%, 100% {
-        transform: translate(0, 0);
-    }
-    25% {
-        transform: translate(7px, -7px);
-    }
-    50% {
-        transform: translate(-7px, 7px);
-    }
-    75% {
-        transform: translate(7px, 7px);
-    }
-}
 .cloud-item {
-    animation: oscillate 5s ease-in-out infinite;
+    background: #5c5c5c;  
+    color: #fff;  
+    padding: 40px;
+    font-size: 18px;
+    font-weight: 300;
+    border-radius: 10px;  
+    text-align: center;
+    width: 250px;  
+    height: 150px;  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
+
+.cloud-item:hover {
+    background: #434343;
+    transform: scale(1.05);  
+}
+
+.cloud-item span {
+    font-size: 22px;
+    font-weight: 700;
 }
