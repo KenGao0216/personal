@@ -13,30 +13,33 @@
 <div id="header">
     <div class="container">
         <div class="header-text">
-                <h1><span>Ken Gao</span><br>Computer Science student at the University of Waterloo</h1>
+                <h1><span>Ken Gao</span><br>1B Computer Science student at the University of Waterloo</h1>
         </div>
     </div>
 </div>
 
 <!-- Portfolio Section -->
 <div id="portfolio">
-            <div class="cloud-item" onclick="openNewPage()">
-                <div class="cloud-shape"></div>
-                <span>PC Builds</span>
-            </div>
-            <div class="cloud-item" onclick="openNewPage1()">
-                <div class="cloud-shape"></div>
-                <span>VirtualPrez</span>
-            </div>
-            <div class="cloud-item" onclick="openNewPage2()">
-                <div class="cloud-shape"></div>
-                <span>b0dyf0cus.io</span>
-            </div>
-            <div class="cloud-item" onclick="openNewPage3()">
-                <div class="cloud-shape"></div>
-                <span>Wordle Probabilities</span>
-            </div>
-            </div>
+    <div class="cloud-item" onclick="openNewPage()">
+        <span>PC Builds</span>
+    </div>
+    <div class="cloud-item" onclick="openNewPage5()">
+        <span>NBA Prediction Model</span>
+    </div>
+    <div class="cloud-item" onclick="openNewPage4()">
+        <span>TI Generator</span>
+    </div>
+    <div class="cloud-item" onclick="openNewPage1()">
+        <span>VirtualPrez</span>
+    </div>
+    <div class="cloud-item" onclick="openNewPage2()">
+        <span>Workout Visualizer</span>
+    </div>
+    <div class="cloud-item" onclick="openNewPage3()">
+        <span>Wordle Probabilities</span>
+    </div>
+    
+</div>
 <!--Stats Section-->
 <div id="stats"> 
     <div class="container">
@@ -48,6 +51,9 @@
                 <h3 class="digits line2">10582097494459230781640628620899862803482534211706</h3>
                 <h3 class="digits line3">79821480865132823066470938446095505822317253594081</h3>
                 <h3 class="digits line4">28481117450284102701938521105559644622948954930381</h3>
+                <h3 class="digits line5">96442881097566593344612847564823378678316527120190</h3>
+                <h3 class="digits line6">9145648566923460348610454326648213393607260249141273</h3>
+                 
             </div>    
             <div>
                 <h2>LeetCode Stats</h2>
@@ -76,6 +82,12 @@
     function openNewPage3() {
         window.open('https://github.com/KenGao0216/Wordle-Probabilities', '_blank');
     }
+    function openNewPage4() {
+        window.open('https://ti-generator-frontend.onrender.com/', '_blank');
+    }
+    function openNewPage5() {
+        window.open('https://github.com/KenGao0216/NBAPredictor', '_blank');
+    }
 </script>
 <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 <script>
@@ -94,14 +106,14 @@
         let count = 0;
 
         let interval = setInterval(function() {
-            if (count <= 200) {
+            if (count <= 300) {
                 counterElement.textContent = count;
                 count++;
             } else {
                 clearInterval(interval);
-                counterElement.textContent = 200; 
+                counterElement.textContent = 300; 
             }
-        }, 40);
+        }, 7);
     }
     window.onload = animateDigitsAndCounter;
 </script>
